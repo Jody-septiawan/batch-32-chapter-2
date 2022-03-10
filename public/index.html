@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand me-5" href="#"><img src="assets/logo.png" /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active text-orange"
+                aria-current="page"
+                href="#"
+                >Blog</a
+              >
+            </li>
+          </ul>
+
+          <a href="#" class="btn btn-orange text-white">Contact Me</a>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Form -->
+    <div
+      class="container-form-blog d-flex align-items-center justify-content-center"
+    >
+      <form>
+        <div class="h2 text-center mb-5">Create Post Blog</div>
+
+        <div class="mb-3">
+          <label for="input-title" class="form-label">Title</label>
+          <input
+            type="email"
+            class="form-control"
+            id="input-title"
+            placeholder="Write here ..."
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="input-content" class="form-label">Content</label>
+          <textarea
+            class="form-control"
+            id="input-content"
+            rows="6"
+            placeholder="Write here ..."
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Upload Image</label>
+          <input class="form-control" type="file" id="formFile" />
+        </div>
+
+        <div class="d-flex justify-content-end mt-5">
+          <button class="btn btn-orange text-white">Post Blog</button>
+        </div>
+      </form>
+    </div>
+    <!-- End Form -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
