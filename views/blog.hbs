@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Creating Blog Page</title>
+    <link rel='stylesheet' href='/public/style.css' />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+      <div class='left-side'>
+        <img src='/public/assets/logo.png' />
+
+        <ul>
+          <li><a href='/'>Home</a></li>
+          <li><a href='/blog' class='nav-active'>Blog</a></li>
+        </ul>
+      </div>
+
+      <div class='right-side'>
+        <a href='/contact-me'>Contact Me</a>
+      </div>
+    </nav>
+
+    <!-- Blog -->
+    <!-- Form -->
+    <div class='container-btn-add-new-blog'>
+      {{#if isLogin}}
+        <a href='/blog-add'>Add New Blog</a>
+      {{else}}
+        <p>Please Login!</p>
+      {{/if}}
+    </div>
+
+    <div class='blog'>
+      <div id='contents' class='blog-list'>
+        <!-- dynamic content would be here -->
+
+        <div class='blog-list-item'>
+          <div class='blog-image'>
+            <img src='/public/assets/blog-img.png' alt='' />
+          </div>
+          <div class='blog-content'>
+            {{#if isLogin}}
+              <div class='btn-group'>
+                <a href='#' class='btn-edit'>Edit Post</a>
+                <a href='#' class='btn-post'>Delete Blog</a>
+              </div>
+            {{/if}}
+            <h1>
+              <a href='/blog-detail/86qw87689sd98s' target='_blank'>Pasar Coding
+                di Indonesia Dinilai Masih Menjanjikan</a>
+            </h1>
+            <div class='detail-blog-content'>
+              12 Jul 2021 22:30 WIB | Ichsan Emrald Alamsyah
+            </div>
+            <p>
+              Ketimpangan sumber daya manusia (SDM) di sektor digital masih
+              menjadi isu yang belum terpecahkan. Berdasarkan penelitian
+              ManpowerGroup, ketimpangan SDM global, termasuk Indonesia,
+              meningkat dua kali lipat dalam satu dekade terakhir. Lorem ipsum,
+              dolor sit amet consectetur adipisicing elit. Quam, molestiae
+              numquam! Deleniti maiores expedita eaque deserunt quaerat! Dicta,
+              eligendi debitis?
+            </p>
+            <div style='text-align: right; color: grey'>1 hour ago</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src='blog.js'></script>
+  </body>
+</html>
