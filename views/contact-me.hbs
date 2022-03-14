@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <title>Personal Web</title>
+    <link rel='stylesheet' href='/public/style.css' />
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'
+      integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=='
+      crossorigin='anonymous'
+      referrerpolicy='no-referrer'
+    />
+    <script src='index.js'></script>
+  </head>
+  <body>
+    <nav>
+      <!-- Left -->
+      <div class='left-side'>
+        <img src='/public/assets/logo.png' />
+
+        <ul>
+          <li><a href='/'>Home</a></li>
+          <li><a href='/blog'>Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Right -->
+      <div class='right-side'>
+        <a href='/contact-me'>Contact Me</a>
+      </div>
+    </nav>
+
+    <div class='container-main'>
+      <form style='width: 400px'>
+        <div style='margin-bottom: 25px'>
+          <label
+            for='input-name'
+            style='font-size: 20px; font-weight: 800'
+          >Name</label>
+          <input
+            type='text'
+            id='input-name'
+            style='
+              width: 100%;
+              background-color: rgb(225, 225, 225);
+              border: 1px solid rgb(199, 199, 199);
+              border-radius: 5px;
+              padding: 8px;
+              margin-top: 10px;
+            '
+          />
+        </div>
+
+        <div style='margin-bottom: 25px'>
+          <label
+            for='input-email'
+            style='font-size: 20px; font-weight: 800'
+          >Email</label>
+          <input
+            type='email'
+            id='input-email'
+            style='
+              width: 100%;
+              background-color: rgb(225, 225, 225);
+              border: 1px solid rgb(199, 199, 199);
+              border-radius: 5px;
+              padding: 8px;
+              margin-top: 10px;
+            '
+          />
+        </div>
+
+        <div style='margin-bottom: 25px'>
+          <label
+            for='input-number'
+            style='font-size: 20px; font-weight: 800'
+          >Phone Number</label>
+          <input
+            type='text'
+            id='input-number'
+            style='
+              width: 100%;
+              background-color: rgb(225, 225, 225);
+              border: 1px solid rgb(199, 199, 199);
+              border-radius: 5px;
+              padding: 8px;
+              margin-top: 10px;
+            '
+          />
+        </div>
+
+        <div style='margin-bottom: 25px'>
+          <label
+            for='select-subject'
+            style='font-size: 20px; font-weight: 800'
+          >Subject</label>
+          <select
+            id='select-subject'
+            style='
+              width: 100%;
+              background-color: rgb(225, 225, 225);
+              border: 1px solid rgb(199, 199, 199);
+              border-radius: 5px;
+              padding: 8px;
+              margin-top: 10px;
+            '
+          >
+            <option>I'm Hiring</option>
+            <option value="Let's Collaboration">Let's Collaboration</option>
+            <option value="Let's Talk">Let's Talk</option>
+          </select>
+        </div>
+
+        <div style='margin-bottom: 25px'>
+          <label
+            for='input-message'
+            style='font-size: 20px; font-weight: 800'
+          >Your Message</label>
+          <textarea
+            id='input-message'
+            style='
+              width: 100%;
+              background-color: rgb(225, 225, 225);
+              border: 1px solid rgb(199, 199, 199);
+              border-radius: 5px;
+              padding: 8px;
+              margin-top: 10px;
+              height: 150px;
+              resize: none;
+            '
+          ></textarea>
+        </div>
+
+        <button
+          style='
+            padding: 10px 35px;
+            background-color: orangered;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 18;
+          '
+          onclick='submitForm()'
+          type='button'
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
