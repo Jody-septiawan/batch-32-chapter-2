@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Blog</title>
+    <link rel='stylesheet' href='/public/style.css' />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+      <!-- Left -->
+      <div class='left-side'>
+        <img src='/public/assets/logo.png' />
+
+        <ul>
+          <li><a href='/'>Home</a></li>
+          <li><a href='/blog' class='text-orange'>Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Right -->
+      <div class='right-side'>
+        {{#if isLogin}}
+          <span class='user-name'>
+            {{user.name}}
+          </span>
+          |
+          <a href='/logout' class='auth logout text-orange'>Logout</a>
+        {{else}}
+          <a href='/register' class='auth'>Register</a>
+          <a href='/login' class='auth'>Login</a>
+        {{/if}}
+
+        <a href='/contact-me' class='btn-contact-me'>Contact Me</a>
+      </div>
+    </nav>
+
+    <!-- Blog -->
+    <!-- Form -->
+    <div class='container-btn-add-new-blog'>
+      {{#if isLogin}}
+        <a href='/add-blog'>Add New Blog</a>
+      {{/if}}
+    </div>
+    <div class='blog'>
+      <div id='contents' class='blog-list'>
+        <!-- dynamic content would be here -->
+        {{#each blogs}}
+          <div class='blog-list-item'>
+            <div class='blog-image'>
+              {{#if this.image}}
+                <img src={{this.image}} alt='' />
+              {{else}}
+                <img
+                  src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Blank_square.svg/400px-Blank_square.svg.png'
+                  alt=''
+                />
+              {{/if}}
+            </div>
+            <div class='blog-content'>
+              {{#if isLogin}}
+                <div class='btn-group'>
+                  <a href='#' class='btn-edit'>Edit Post</a>
+                  <a href='/delete-blog/{{this.id}}' class='btn-post'>Delete
+                    Blog</a>
+                </div>
+              {{/if}}
+              <h1>
+                <a
+                  href='/blog-detail/{{this.id}}'
+                  target='_blank'
+                >{{this.title}}</a>
+              </h1>
+              <div class='detail-blog-content'>
+                {{this.post_at}}
+                |
+                {{#if this.author.name}}
+                  {{this.author.name}}
+                {{else}}
+                  👨🏻‍💻
+                {{/if}}
+              </div>
+              <p>{{this.content}}</p>
+              <div style='text-align: right; margin-top: 30px; color: gray'>
+                {{this.duration}}
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <script src='/public/blog.js'></script>
+  </body>
+</html>
