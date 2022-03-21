@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>Creating Blog Page</title>
+    <link rel='stylesheet' href='/public/style.css' />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+      <div class='left-side'>
+        <img src='/public/assets/logo.png' />
+
+        <ul>
+          <li><a href='/'>Home</a></li>
+          <li><a href='/blog' class='nav-active'>Blog</a></li>
+        </ul>
+      </div>
+
+      <div class='right-side'>
+        {{#if isLogin}}
+          <span>{{user.name}}</span>,
+          <a href='/logout' class='nav-auth text-orange'>Logout</a>
+        {{else}}
+          <a href='/register' class='nav-auth'>Register</a>
+          <a href='/login' class='nav-auth'>Login</a>
+        {{/if}}
+        <a href='/contact-me'>Contact Me</a>
+      </div>
+    </nav>
+
+    <!-- Blog -->
+    <!-- Form -->
+    <div class='container-btn-add-new-blog'>
+      {{#if isLogin}}
+        <a href='/blog-add'>Add New Blog</a>
+      {{/if}}
+    </div>
+
+    <div class='blog'>
+      <div id='contents' class='blog-list'>
+        <!-- dynamic content would be here -->
+        {{#each blogs}}
+          <div class='blog-list-item'>
+            <div class='blog-image'>
+              {{! <img src='/public/assets/blog-img.png' alt='' /> }}
+              <img src={{this.image}} alt='' />
+            </div>
+            <div class='blog-content'>
+              {{#if this.isLogin}}
+                <div class='btn-group'>
+                  <a href='#' class='btn-edit'>Edit Post</a>
+                  <a href='/blog-delete/{{this.id}}' class='btn-post'>Delete
+                    Blog</a>
+                </div>
+              {{/if}}
+              <h1>
+                <a
+                  href='/blog-detail/{{this.id}}'
+                  target='_blank'
+                >{{this.title}}</a>
+              </h1>
+              <div class='detail-blog-content'>
+                {{this.post_at}}
+                |
+                {{#if this.author.name}}
+                  {{this.author.name}}
+                {{else}}
+                  ❌ 👨🏻‍💻
+                {{/if}}
+              </div>
+              <p>{{this.content}}</p>
+              <div
+                style='text-align: right; color: grey'
+              >{{this.duration}}</div>
+            </div>
+          </div>
+        {{/each}}
+
+      </div>
+    </div>
+
+    <script src='blog.js'></script>
+  </body>
+</html>
